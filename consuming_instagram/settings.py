@@ -47,6 +47,10 @@ INSTALLED_APPS = (
     'consuming_instagram.core',
 )
 
+INSTALLED_APPS += (
+    'django-extensions',
+)
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.cache.UpdateCacheMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
