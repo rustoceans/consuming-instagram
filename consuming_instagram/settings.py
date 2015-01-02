@@ -48,7 +48,7 @@ INSTALLED_APPS = (
 )
 
 INSTALLED_APPS += (
-    'django-extensions',
+    'django_extensions',
 )
 
 MIDDLEWARE_CLASSES = (
