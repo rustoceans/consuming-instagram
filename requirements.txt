@@ -1,0 +1,11 @@
+Django==1.6.5
+South==1.0
+Unipath==1.0
+dj-database-url==0.3.0
+dj-static==0.0.6
+django-debug-toolbar==1.2.1
+django-devserver==0.8.0
+gunicorn==19.1.0
+psycopg2==2.5.3
+python-decouple==2.2
+pytz
