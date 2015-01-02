@@ -8,8 +8,10 @@
   </head>
   
   <body>
-    <h1>Hello, world!</h1>
-  
+    <h1>Hello, welcome to the my app!</h1>
+	{% for user in users %}
+		<p>{{user}}</p>
+	{% endfor %}
     <script src="//code.jquery.com/jquery.js"></script>
   </body>
 </html>
