@@ -9,9 +9,14 @@
   
   <body>
     <h1>Hello, welcome to the my app!</h1>
+	<h3>Usuários</h3>
 	{% for user in users %}
-		<p>{{user}}</p>
+	<ul>
+	    <li>{{user}}</li>
+	</ul>
 	{% endfor %}
+	<h3>Media_count</h3>
+	<p>{{num_responses}}<b></b></p>
     <script src="//code.jquery.com/jquery.js"></script>
   </body>
 </html>

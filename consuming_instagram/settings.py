@@ -8,6 +8,8 @@ https://docs.djangoproject.com/en/1.6/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
+TEMPLATE_CONTEXT_PROCESSORS += ('django.core.context_processors.request',)
 
 import sys
 from decouple import config
@@ -15,6 +17,8 @@ from dj_database_url import parse as db_url
 from unipath import Path
 BASE_DIR = Path(__file__).parent
 
+
+# Templates
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -97,6 +101,7 @@ USE_TZ = True
 STATIC_ROOT = BASE_DIR.child('staticfiles')
 STATIC_URL = '/static/'
 
+TEMPLATE_DIRS = BASE_DIR.child('core', 'templates')
 
 # Cache
 CACHE_MIDDLEWARE_ANONYMOUS_ONLY = True
@@ -124,9 +129,6 @@ else:  # Assume development mode
     }
 
 
-# Templates
-from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
-TEMPLATE_CONTEXT_PROCESSORS += ('django.core.context_processors.request',)
 TEMPLATE_STRING_IF_INVALID = 'CONTEXT_ERROR'
 
 
