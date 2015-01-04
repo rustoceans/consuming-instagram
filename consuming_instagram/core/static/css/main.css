@@ -1,0 +1,15 @@
+.dashboard #content {width: 600px;}
+
+#desc {
+	float: right;
+	width: 100%;
+	position: relative;
+	margin-right: -105%;
+	margin-top: -404px;
+	border: 4px solid #ccc;
+	word-wrap: break-word
+}
+
+#desc h1{text-align: center;}
+
+.module {border: 4px solid #ccc;}
