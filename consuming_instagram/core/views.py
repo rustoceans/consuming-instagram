@@ -12,4 +12,4 @@ def home(request):
     initial_data = get_response(url_default)
     context = {
         'users': get_users_responses(), 'num_responses': num_responses(), }
-    return render(request, 'core/base.html', context)
+    return render(request, 'core/graph.html', context)

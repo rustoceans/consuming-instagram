@@ -50,7 +50,7 @@ def consuming_instagram():
     datas = get_response(url_default)
     next_url = datas['pagination']['next_url']
     cat_users, dog_users = [], []
-    for i in range(40):
+    for i in range(143):
         datas = get_response(next_url)
         for u in range(len(get_users_responses())):
             if 'cat' in datas['data'][u]['tags']:

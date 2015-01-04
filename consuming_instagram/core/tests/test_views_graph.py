@@ -2,9 +2,9 @@
 from django.test import TestCase
 
 
-class HomeTest(TestCase):
+class GraphTest(TestCase):
     def setUp(self):
-        self.resp = self.client.get('/')
+        self.resp = self.client.get('/admin/graph-of-pets/')
 
     def test_get(self):
         """
@@ -16,4 +16,4 @@ class HomeTest(TestCase):
         """
         Home must use template index.html
         """
-        self.assertTemplateUsed(self.resp, 'core/base.html')
+        self.assertTemplateUsed(self.resp, 'core/graph.html')
