@@ -1,4 +1,5 @@
 {% extends "admin/base_site.html" %}
+{% load staticfiles %}
 {% load i18n admin_static %}
 
 {% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}" />{% endblock %}
@@ -17,7 +18,7 @@
     <a href="{{ app.app_url }}" class="section" title="{% blocktrans with name=app.name %}Models in the Consuming Instagram application{% endblocktrans %}">Consuming Instagram</a>
 </caption>
 <tr class="model-consuming-instagram">
-<th scope="row"><a href="{{ model.admin_url }}">Graph Of Pets</a></th>
+<th scope="row"><a href="{% url 'graph' %}">Graph Of Pets</a></th>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 </tr>

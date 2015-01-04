@@ -6,6 +6,6 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', 'consuming_instagram.core.views.home', name='home'),
+    url(r'^admin/graph-of-pets/$', 'consuming_instagram.core.views.home', name='graph'),
     url(r'^admin/', include(admin.site.urls)),
 )
