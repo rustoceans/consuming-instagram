@@ -1,10 +1,20 @@
 # coding: utf-8
 from django.test import TestCase
+from django.test.client import Client
+from django.contrib.auth.models import User
 
 
 class GraphTest(TestCase):
+
     def setUp(self):
-        self.resp = self.client.get('/admin/graph-of-pets/')
+        self.c = Client()
+        self.user = User.objects.create(
+            username='admin', password='admin',
+            is_active=True, is_staff=True, is_superuser=True)
+        self.user.set_password('admin')
+        self.user.save()
+        self.login = self.c.login(username='admin', password='admin')
+        self.resp = self.c.get('/admin/graph-of-pets/')
 
     def test_get(self):
         """
@@ -13,7 +23,4 @@ class GraphTest(TestCase):
         self.assertEqual(200, self.resp.status_code)
 
     def test_template(self):
-        """
-        Home must use template index.html
-        """
         self.assertTemplateUsed(self.resp, 'core/graph.html')
