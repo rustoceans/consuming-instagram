@@ -11,6 +11,18 @@
 {% block breadcrumbs %}{% endblock %}
 
 {% block content %}
+<script type="text/javascript">
+$(window).load(function() {
+    $(".loader").fadeOut("slow");
+})
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#link-graph").click(function() {
+    $(".loader").css("display","");
+})});
+</script>
+<div class="loader"></div>
 <div id="content-main">
 <div class="app-instagram module">
 <table>
@@ -18,7 +30,7 @@
     <a href="{{ app.app_url }}" class="section" title="{% blocktrans with name=app.name %}Models in the Consuming Instagram application{% endblocktrans %}">Consuming Instagram</a>
 </caption>
 <tr class="model-consuming-instagram">
-<th scope="row"><a href="{% url 'graph' %}">Graph Of Pets</a></th>
+<th scope="row"><a id="link-graph" href="{% url 'graph' %}">Graph Of Pets</a></th>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 </tr>

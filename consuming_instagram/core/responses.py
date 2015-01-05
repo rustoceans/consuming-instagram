@@ -46,11 +46,23 @@ def get_length_users():
     return len(counter_users)
 
 
+def all_users():
+    datas = get_response(url_default)
+    next_url = datas['pagination']['next_url']
+    users = []
+    for i in range(20):
+        datas = get_response(next_url)
+        for u in range(len(get_users_responses())):
+            users.append(datas['data'][u]['user']['username'])
+        next_url = datas['pagination']['next_url']
+    return len(c(users))
+
+
 def consuming_instagram():
     datas = get_response(url_default)
     next_url = datas['pagination']['next_url']
     cat_users, dog_users = [], []
-    for i in range(143):
+    for i in range(20):
         datas = get_response(next_url)
         for u in range(len(get_users_responses())):
             if 'cat' in datas['data'][u]['tags']:
