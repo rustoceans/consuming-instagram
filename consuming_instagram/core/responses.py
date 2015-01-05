@@ -15,7 +15,6 @@ url_to_length = 'https://api.instagram.com/v1/tags/pets?access_token={access_tok
 
 
 def _length_urls():
-
     return None
 
 
@@ -60,4 +59,12 @@ def consuming_instagram():
             elif 'dog' in datas['data'][u]['tags']:
                 dog_users.append(datas['data'][u]['user']['username'])
         next_url = datas['pagination']['next_url']
-    return len(c(users)), len(c(cat_users)), len(c(dog_users))
+    res = lambda x=(len(c(users)), len(c(cat_users)), len(c(dog_users))): x
+    return _research(res())
+
+
+def _research(*args):
+    request = args[0]
+    users, cat_users, dog_users = request[0], request[1], request[2]
+    other_users = lambda x=users: users - (cat_users + dog_users)
+    return users, cat_users, dog_users, other_users()

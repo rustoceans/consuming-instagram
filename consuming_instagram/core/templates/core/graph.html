@@ -31,7 +31,7 @@ $(function () {
             plotShadow: false
         },
         title: {
-            text: 'Research done in <b>{{all_users}} users at <a href="http://instagram.com/" style="color: #659ED5;">Instagram</a>.</b>'
+            text: 'Research done in <b>{{all_users}} between users who create pets at <br><a href="http://instagram.com/" style="color: #659ED5;">Instagram</a>.</b>'
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -55,9 +55,9 @@ $(function () {
             type: 'pie',
             name: 'Browser share',
             data: [
-                ['Firefox',   25],
-                ['Chrome',    50],
-                ['Safari',    81]
+                ['Dog Users',   {{dog_users}}],
+                ['Other Users',    {{other_users}}],
+                ['Cat Users',    {{cat_users}}]
             ]
         }]
     });
