@@ -12,3 +12,4 @@ python-decouple==2.2
 pytz
 argparse==1.2.1
 wsgiref==0.1.2
+django-extensions==1.4.9
