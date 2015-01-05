@@ -1,8 +1,10 @@
 # coding: utf-8
 from consuming_instagram.core.responses import *
 from django.template.response import TemplateResponse
+from django.contrib.admin.views.decorators import staff_member_required
 
 
+@staff_member_required
 def consuming(request):
     context = {}
     response = TemplateResponse(request, 'core/graph.html', context)
