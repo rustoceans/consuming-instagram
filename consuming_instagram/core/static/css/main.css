@@ -23,3 +23,13 @@
 	z-index: 9999;
 	background: url('http://myhockeytradingcards.com/images/pleaseWaitOverlay.gif') 50% 50% no-repeat #FFF;
 }
+
+table#t01 {
+	float: right;
+	width: 100%;
+	position: relative;
+	margin-right: -105%;
+	margin-top: -255px;
+	border: 4px solid #ccc;
+	word-wrap: break-word;
+}
