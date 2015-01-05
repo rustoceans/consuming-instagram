@@ -7,5 +7,8 @@ django-debug-toolbar==1.2.1
 django-devserver==0.8.0
 gunicorn==19.1.0
 psycopg2==2.5.3
+pystache==0.5.4
 python-decouple==2.2
 pytz
+argparse==1.2.1
+wsgiref==0.1.2
