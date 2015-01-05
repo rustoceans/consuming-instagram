@@ -34,4 +34,3 @@ class GraphTest(TestCase):
             self.resp.context['dog_users'], self.resp.context['dog_users'])
         self.assertEquals(
             self.resp.context['other_users'], self.resp.context['other_users'])
-        # print 'eu{0}'.format(self.resp.context[])
