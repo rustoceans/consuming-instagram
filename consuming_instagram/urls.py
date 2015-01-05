@@ -8,5 +8,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
                        url(r'^admin/graph-of-pets/$',
                            'consuming_instagram.core.views.consuming', name='graph'),
+                       url(r'^$',
+                           'consuming_instagram.core.views.home', name='home'),
                        url(r'^admin/', include(admin.site.urls)),
                        )

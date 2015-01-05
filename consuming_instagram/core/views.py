@@ -4,6 +4,10 @@ from django.template.response import TemplateResponse
 from django.contrib.admin.views.decorators import staff_member_required
 
 
+def home(request):
+    return TemplateResponse(request, 'core/home.html')
+
+
 @staff_member_required
 def consuming(request):
     context = {}
