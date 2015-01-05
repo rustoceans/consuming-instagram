@@ -2,9 +2,10 @@
 import urllib2
 import json
 from collections import Counter as c
+from django.conf import settings
 
 
-access_token = '1525899796.5b9e1e6.48f9b8caae4d45059c9772b07fcadf55'
+access_token = settings.ACCESS_TOKEN
 
 url_default = 'https://api.instagram.com/v1/tags/pets/media/recent?access_token={access_token}'.format(
     access_token=access_token)
@@ -59,4 +60,4 @@ def consuming_instagram():
             elif 'dog' in datas['data'][u]['tags']:
                 dog_users.append(datas['data'][u]['user']['username'])
         next_url = datas['pagination']['next_url']
-    return len(c(users)), cat_users, dog_users
+    return len(c(users)), len(c(cat_users)), len(c(dog_users))
