@@ -24,3 +24,14 @@ class GraphTest(TestCase):
 
     def test_template(self):
         self.assertTemplateUsed(self.resp, 'core/graph.html')
+
+    def test_context(self):
+        self.assertEquals(
+            self.resp.context['all_users'], self.resp.context['all_users'])
+        self.assertEquals(
+            self.resp.context['cat_users'], self.resp.context['cat_users'])
+        self.assertEquals(
+            self.resp.context['dog_users'], self.resp.context['dog_users'])
+        self.assertEquals(
+            self.resp.context['other_users'], self.resp.context['other_users'])
+        # print 'eu{0}'.format(self.resp.context[])
